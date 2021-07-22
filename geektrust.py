@@ -22,13 +22,15 @@ def find_ruler(lines: List[str]) -> str:
         if parsed_line.kingdom != kingdom_of_shan \
             and parsed_line.kingdom != None \
             and kingdom != None \
-            and kingdom.is_ally(parsed_line.message):
+            and kingdom.is_ally(parsed_line.message) \
+            and allies.count(parsed_line.kingdom) == 0:
             allies.append(parsed_line.kingdom)
     return 'NONE' if len(allies) < 3 else kingdom_of_shan + ' ' + ' '.join(allies)
 
+
 def main():
     filename = sys.argv[1]
-    lines = open(filename, mode ='+r').readlines()
+    lines = open(filename, mode='+r').readlines()
     print(find_ruler(lines))
 
 

@@ -9,7 +9,7 @@ class Kingdoms:
         self.kingdom_dict = {}
 
     def add_kingdom(self, name: str, emblem: str):
-        self.kingdom_dict[name] = Kingdom(name, emblem)
+        self.kingdom_dict[name.upper()] = Kingdom(name, emblem)
 
     def find_by_name(self, name: str) -> Optional[Kingdom]:
-        return self.kingdom_dict.get(name)
+        return None if name == None else self.kingdom_dict.get(name.upper())
