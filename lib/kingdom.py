@@ -8,7 +8,6 @@ class Kingdom:
     emblem: str
 
     def is_ally(self, message: str) -> bool:
-        print(self.name)
         return self.contains_emblem(message)
 
     def contains_emblem(self, message: str) -> bool:
