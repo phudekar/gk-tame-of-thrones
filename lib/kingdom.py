@@ -8,6 +8,7 @@ class Kingdom:
     emblem: str
 
     def is_ally(self, message: str) -> bool:
+        print(self.name)
         return self.contains_emblem(message)
 
     def contains_emblem(self, message: str) -> bool:
@@ -15,7 +16,8 @@ class Kingdom:
         message_chars = char_count(message)
 
         for e in emblem_chars.keys():
-            if message_chars.get(e) < emblem_chars.get(e):
+            if message_chars.get(e) == None \
+                    or message_chars.get(e) < emblem_chars.get(e):
                 return False
 
         return True

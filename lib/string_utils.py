@@ -14,10 +14,10 @@ def char_count(text: str) -> Dict[str, int]:
 
 def offset_char(text: str, offset: int) -> str:
     chars = list(char_range('a','z'))
-    result = ""
+    result = ''
     for char in text:
         index = chars.index(char.lower()) + offset
-        if(index > len(chars)):
+        if(index >= len(chars)):
             index = index - len(chars)
         result += chars[index]
     return result
